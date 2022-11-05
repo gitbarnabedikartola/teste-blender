@@ -51,7 +51,9 @@ jobs:
         run: |
           git clone https://github.com/gitbarnabedikartola/teste-blender.git
           cd teste-blender/cronometro
+          wget https://github.com/${{ github.repository }}/releases/download/0.0.1/59seg.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/5min.mkv
+          wget https://github.com/${{ github.repository }}/releases/download/0.0.1/10min.mkv
           cd ..
           ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v3.blend -a -x 1 -noaudio -o // -S video 
           
