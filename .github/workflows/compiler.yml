@@ -50,6 +50,7 @@ jobs:
         shell: bash
         run: |
           git clone https://github.com/gitbarnabedikartola/teste-blender.git
+          mkdr -p teste-blender/cronometro
           cd teste-blender/cronometro
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/59seg.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/5min.mkv
