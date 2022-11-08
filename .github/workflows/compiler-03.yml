@@ -59,7 +59,7 @@ jobs:
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/5min.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/10min.mkv
           cd ..
-          ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 36001 -e 54000 -a
+          ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 20001 -e 30000 -a
           
       - name: push to git releases
         shell: bash
