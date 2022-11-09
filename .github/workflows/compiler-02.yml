@@ -1,4 +1,4 @@
-name: compiler
+name: compiler 10001>20000
 
 # Controls when the workflow will run
 on:
@@ -58,6 +58,11 @@ jobs:
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/59seg.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/5min.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/10min.mkv
+          mkdir -p render-animação/mint/
+          cd render-animação/mint/
+          wget https://github.com/${{ github.repository }}/releases/download/0.0.1/base.mkv
+          cd ../..
+          
           cd ..
           ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 10001 -e 20000 -a
           

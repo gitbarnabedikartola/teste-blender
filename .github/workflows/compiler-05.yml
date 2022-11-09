@@ -1,4 +1,4 @@
-name: compiler
+name: compiler 40001>50000
 
 # Controls when the workflow will run
 on:
@@ -59,6 +59,11 @@ jobs:
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/5min.mkv
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/10min.mkv
           cd ..
+          mkdir -p render-animação/mint/
+          cd render-animação/mint/
+          wget https://github.com/${{ github.repository }}/releases/download/0.0.1/base.mkv
+          cd ../..
+          
           ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 40001 -e 50000 -a
           
       - name: push to git releases
