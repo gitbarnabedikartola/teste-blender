@@ -64,21 +64,25 @@ jobs:
           wget https://github.com/${{ github.repository }}/releases/download/0.0.1/base.mkv
           cd ../..
           
-          ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 1 -e 10000 -a
+          # ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 1 -e 10000 -a
           
-      - name: push to git releases
-        shell: bash
-        run: |
-          echo ${{ github.token }} | gh auth login --with-token
-          # gh release create 0.0.1 --title cronometro --repo gitbarnabedikartola/teste-blender --notes "notas"
-          cd teste-blender
-          for i in *.mkv; do
-            gh release upload 0.0.1 --repo ${{ github.repository }} --clobber $i
-          done
+       # Tmate ##
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+#         
+#       - name: push to git releases
+#         shell: bash
+#         run: |
+#           echo ${{ github.token }} | gh auth login --with-token
+#           # gh release create 0.0.1 --title cronometro --repo gitbarnabedikartola/teste-blender --notes "notas"
+#           cd teste-blender
+#           for i in *.mkv; do
+#             gh release upload 0.0.1 --repo ${{ github.repository }} --clobber $i
+#           done
           
-      #  # Tmate ##
-      # - name: Setup tmate session
-      #   uses: mxschmitt/action-tmate@v3
+          
+          
+          
       
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
