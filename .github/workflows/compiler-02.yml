@@ -64,7 +64,7 @@ jobs:
           cd ../..
           
           cd ..
-          ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -x 1 -noaudio -o // -S video -s 10001 -e 20000 -a
+          ../blender-3.3.1-linux-x64/blender -b big-vs-mint-v4.blend -noaudio -o // -S video -s 10001 -e 20000 -a
           
       - name: push to git releases
         shell: bash
