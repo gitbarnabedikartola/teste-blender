@@ -4,8 +4,8 @@ name: compiler 60001>70000
 on:
   workflow_dispatch:
   
-  push:
-    branches: [ "*" ]
+  # push:
+  #   branches: [ "*" ]
   
   # repository_dispatch:
   #   types:
