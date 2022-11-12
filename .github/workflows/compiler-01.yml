@@ -70,15 +70,15 @@ jobs:
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
 #         
-#       - name: push to git releases
-#         shell: bash
-#         run: |
-#           echo ${{ github.token }} | gh auth login --with-token
-#           # gh release create 0.0.1 --title cronometro --repo gitbarnabedikartola/teste-blender --notes "notas"
-#           cd teste-blender
-#           for i in *.mkv; do
-#             gh release upload 0.0.1 --repo ${{ github.repository }} --clobber $i
-#           done
+      - name: push to git releases
+        shell: bash
+        run: |
+          echo ${{ github.token }} | gh auth login --with-token
+          # gh release create 0.0.1 --title cronometro --repo gitbarnabedikartola/teste-blender --notes "notas"
+          cd teste-blender
+          for i in *.mkv; do
+            gh release upload 0.0.1 --repo ${{ github.repository }} --clobber $i
+          done
           
           
           
